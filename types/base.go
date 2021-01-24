@@ -14,7 +14,7 @@ type User struct {
 // Post is the data of a post responsed by Plurk API 2.0.
 type Post struct {
 	ID        int      `json:"plurk_id"`
-	LimitedTo IntSlice `json:"limited_to,string"`
+	LimitedTo IntSlice `json:"limited_to"`
 
 	Anonymous   bool   `json:"anonymous"`
 	Bookmark    bool   `json:"bookmark"`

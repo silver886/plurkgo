@@ -7,6 +7,7 @@ import (
 )
 
 // Time is the time responsed by Plurk API 2.0.
+// Its format is `Mon, 02 Jan 2006 15:04:05 MST`
 type Time time.Time
 
 // UnmarshalJSON implement Unmarshaler for time from Plurk API 2.0.
