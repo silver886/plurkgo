@@ -6,10 +6,10 @@ import (
 	"time"
 )
 
-// Time is the time responsed by Plurk API.
+// Time is the time responsed by Plurk API 2.0.
 type Time time.Time
 
-// UnmarshalJSON implement Unmarshaler for time from Plurk API.
+// UnmarshalJSON implement Unmarshaler for time from Plurk API 2.0.
 func (t *Time) UnmarshalJSON(b []byte) error {
 	if tp, err := time.Parse(time.RFC1123, strings.Trim(string(b), "\"")); err == nil {
 		*t = Time(tp)
@@ -19,12 +19,12 @@ func (t *Time) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// MarshalJSON implement Marshaler for time from Plurk API.
+// MarshalJSON implement Marshaler for time from Plurk API 2.0.
 func (t *Time) MarshalJSON() ([]byte, error) {
 	return json.Marshal(t)
 }
 
-// Format time from Plurk API
+// Format time from Plurk API 2.0
 func (t *Time) Format(s string) string {
 	return time.Time(*t).Format(s)
 }

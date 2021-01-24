@@ -1,6 +1,6 @@
 package types
 
-// User is the data of a user responsed by Plurk API.
+// User is the data of a user responsed by Plurk API 2.0.
 type User struct {
 	ID       int    `json:"id"`
 	Premium  bool   `json:"premium"`
@@ -11,10 +11,10 @@ type User struct {
 	NickName string `json:"nick_name"`
 }
 
-// Post is the data of a post responsed by Plurk API.
+// Post is the data of a post responsed by Plurk API 2.0.
 type Post struct {
-	ID   int `json:"plurk_id"`
-	Type int `json:"plurk_type"`
+	ID        int   `json:"plurk_id"`
+	LimitedTo []int `json:"limited_to"`
 
 	Anonymous   bool   `json:"anonymous"`
 	Bookmark    bool   `json:"bookmark"`
@@ -28,10 +28,10 @@ type Post struct {
 	Unread        int    `json:"is_unread"`
 	Lang          string `json:"lang"`
 	//  null,  `json:"last_edited"`
-	//  null,  `json:"limited_to"`
 	Mentioned           int    `json:"mentioned"`
 	NoComments          int    `json:"no_comments"`
 	Owner               int    `json:"owner_id"`
+	Type                int    `json:"plurk_type"`
 	Porn                bool   `json:"porn"`
 	Posted              Time   `json:"posted"`
 	PublishToFollowers  bool   `json:"publish_to_followers"`
