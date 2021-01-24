@@ -21,9 +21,9 @@ const (
 )
 
 // NewClient returns a new Client with the given OAuth config and token.
-func NewClient(config *Config, token *Token) *Client {
+func NewClient(consumer *Consumer, token *Token) *Client {
 	return &Client{
-		Client: config.Config.Client(oauth1.NoContext, token.Token),
+		Client: consumer.Config.Client(oauth1.NoContext, token.Token),
 	}
 }
 
