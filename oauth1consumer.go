@@ -1,4 +1,4 @@
-package oauth1
+package plurkgo
 
 import (
 	"net/url"

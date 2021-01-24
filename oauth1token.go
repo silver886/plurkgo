@@ -1,4 +1,4 @@
-package oauth1
+package plurkgo
 
 import (
 	"github.com/dghubble/oauth1"
